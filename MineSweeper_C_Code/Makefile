@@ -1,0 +1,28 @@
+CC = '/home/forrest/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_GNU_Linux/bin/arm-none-linux-gnueabi-gcc'  -g
+INCLUDE = /usr/local/include
+LIBS =  -lm -lpthread
+
+default: all
+
+all: maze
+
+createoi: createoi.h createoi.c
+	$(CC) createoi.c createoi.h $(LIBS) -o createoi.o
+
+createoi_patch: createoi_patch.c createoi_patch.h
+	$(CC) createoi_patch.c createoi_patch.h $(LIBS) -o createoi_patch.o
+
+control: control.c control.h
+	$(CC) control.c control.h $(LIBS) -o control.o
+
+plan: plan.c plan.h
+	$(CC) plan.c plan.h $(LIBS) -o plan.o
+
+maze: maze.c createoi_patch.o control.o plan.o createoi.o
+	$(CC) maze.c createoi_patch.o control.o plan.o createoi.o $(LIBS) -o maze
+
+
+clean:
+	rm -f *.o
+	rm -f *.txt
+	rm -f maze

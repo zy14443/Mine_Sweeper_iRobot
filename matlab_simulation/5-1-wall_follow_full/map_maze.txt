@@ -1,0 +1,54 @@
+% File containing map information
+
+
+% Formatting:
+% wall x1 y1 x2 y2
+%   Order does not matter between the points
+% line x1 y1 x2 y2
+% beacon x y [r g b] ID_tag
+%   [r g b] is the red-green-blue color vector
+% virtwall x y theta
+%   Virtual walls emit from a location, not like real walls
+%   theta is the angle relative to the positive x-axis
+
+% 1
+wall    0           0           1.22        0
+wall    1.22        0           1.22       -0.61
+wall    1.22       -0.61        0.61       -0.61
+
+% 2
+wall   -0.61        0          -1.22        0
+wall   -1.22        0          -1.22       -0.61
+wall   -1.22       -0.61        0          -0.61
+wall   -0.61        0          -0.61       -0.61 
+
+% 3
+wall   -1.83        1.83        1.83        1.83
+wall    1.83        1.83        1.83       -1.83
+wall    1.83       -1.83        1.22       -1.83  
+wall    0.61       -1.83       -1.83       -1.83 
+wall   -1.83       -1.83       -1.83        1.83 
+
+% 4
+wall    1.22       -1.83        1.22       -1.22
+wall    1.22       -1.22        0.61       -1.22
+
+% 5
+wall    0          -1.22       -1.22       -1.22
+wall   -1.22       -1.22       -1.22       -1.83
+  
+% 6
+wall   -1.22        1.83       -1.22        0.61
+wall   -1.22        0.61       -0.61        0.61
+wall   -0.61        0.61       -0.61        1.83
+
+% 7
+wall    0.61        1.83        0.61        1.22
+
+% 8
+wall    0           1.22        0           0.61
+wall    0           0.61        1.22        0.61
+wall    1.22        0.61        1.22        1.22
+
+% a line to put robot: -1.83-0.1651 =
+line    0.61       -1.9951      1.22       -1.9951 
